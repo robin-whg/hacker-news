@@ -2,10 +2,21 @@
 // We suggest you to commit this file into source control
 // Read more: https://github.com/vuejs/vue-next/pull/3399
 
-declare module "vue" {
+declare module 'vue' {
   export interface GlobalComponents {
-    HelloWorld: typeof import("./components/TheNavbar.vue")["default"];
+    BaseButton: typeof import('./components/BaseButton.vue')['default']
+    BaseSpinner: typeof import('./components/BaseSpinner.vue')['default']
+    BaseSuspense: typeof import('./components/BaseSuspense.vue')['default']
+    IHeroiconsOutlineGlobe: typeof import('~icons/heroicons-outline/globe')['default']
+    IHeroiconsOutlineMoon: typeof import('~icons/heroicons-outline/moon')['default']
+    IHeroiconsOutlineSun: typeof import('~icons/heroicons-outline/sun')['default']
+    IHeroiconsSolidAnnotation: typeof import('~icons/heroicons-solid/annotation')['default']
+    IHeroiconsSolidStar: typeof import('~icons/heroicons-solid/star')['default']
+    StoryList: typeof import('./components/StoryList.vue')['default']
+    StoryListItem: typeof import('./components/StoryListItem.vue')['default']
+    Test: typeof import('./components/test.vue')['default']
+    TheNavbar: typeof import('./components/TheNavbar.vue')['default']
   }
 }
 
-export {};
+export { }
