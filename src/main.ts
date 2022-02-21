@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import "./styles/index.css";
 
-import { createRouter, createHead, createPinia } from "./modules";
+import { createHead, createPinia, createRouter } from "./modules";
 
 createApp(App)
   .use(createRouter())
