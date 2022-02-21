@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { defineProps, toRefs, withDefaults } from "vue";
 interface Props {
   loading?: boolean;
   btnType?: "primary" | "secondary" | "tertiary";
