@@ -1,5 +1,7 @@
 <template>
-  <p>Page not found.</p>
+  <div class="h-screen w-screen">
+    <not-found />
+  </div>
 </template>
 
 <route lang="yaml">
