@@ -15,7 +15,9 @@ const links: [string, string][] = [
     class="sticky top-0 flex w-full items-center justify-between border-b border-gray-300 bg-neutral-50/90 p-2 backdrop-blur dark:border-gray-600 dark:bg-neutral-900/90"
   >
     <div class="flex items-center gap-4">
-      <i-heroicons-outline-newspaper class="h-8 w-8 flex-none text-primary" />
+      <i-heroicons-outline-newspaper
+        class="h-[2.375rem] w-[2.375rem] flex-none text-primary"
+      />
       <div
         class="hidden items-center gap-4 text-gray-600 dark:text-gray-300 sm:flex"
       >
