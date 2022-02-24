@@ -1,7 +1,7 @@
 <template>
-  <div class="container mx-auto max-w-3xl">
+  <base-container>
     <base-suspense>
-      <story-list />
+      <story-list story-type="top" />
     </base-suspense>
-  </div>
+  </base-container>
 </template>
