@@ -6,7 +6,7 @@ const links: [string, string][] = [
   ["new", "New"],
   ["ask", "Ask"],
   ["show", "Show"],
-  ["jobs", "Jobs"],
+  ["job", "Job"],
 ];
 </script>
 

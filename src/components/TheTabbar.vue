@@ -35,12 +35,12 @@
       Show
     </router-link>
     <router-link
-      :to="{ name: 'jobs' }"
+      :to="{ name: 'job' }"
       class="flex flex-col items-center justify-center text-xs"
       active-class="text-primary"
     >
       <i-heroicons-outline-briefcase class="h-7 w-7" />
-      Jobs
+      Job
     </router-link>
   </nav>
 </template>
