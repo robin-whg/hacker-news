@@ -1,51 +1,47 @@
 import { defineStore } from "pinia";
-import { computed, reactive, toRefs } from "vue";
+import { reactive, toRefs } from "vue";
 import { api } from "~/composables";
-import type { Job, Story } from "~/types";
+import type { Comment, Job, Poll, Pollopt, Story, StoryType } from "~/types";
 
 export const useItemStore = defineStore("items", () => {
   const state = reactive({
-    items: <(Story | Job)[]>[],
-    topStoryPointer: 0,
-    topStories: <number[]>[],
+    items: <(Story | Comment | Job | Poll | Pollopt)[]>[],
+    activeStories: <StoryType>"top",
+    top: <number[]>[],
+    new: <number[]>[],
+    ask: <number[]>[],
+    show: <number[]>[],
+    job: <number[]>[],
   });
 
-  async function fetchStory(id: number) {
+  async function fetchItem(id: number) {
     try {
-      const { data } = await api.get<Story | Job>(`item/${id}.json`);
+      const { data } = await api.get<Story | Comment | Job | Poll | Pollopt>(
+        `item/${id}.json`
+      );
       state.items.push(data);
     } catch (err) {
       console.error(err);
     }
   }
 
-  async function fetchStories(startAt = 0, limit = 25) {
-    const promises: Promise<void>[] = [];
-    for (let i = startAt; i < startAt + limit; i++) {
-      promises.push(fetchStory(state.topStories[state.topStoryPointer + i]));
-    }
-    await Promise.all(promises);
-    state.topStoryPointer = state.topStoryPointer + limit;
+  async function fetchItems(ids: number[]) {
+    await Promise.all(
+      ids.map((id) => {
+        return fetchItem(id);
+      })
+    );
   }
 
-  async function fetchTopStories() {
-    try {
-      const { data } = await api.get<number[]>("topstories.json");
-      state.topStories = data;
-    } catch (err) {
-      console.error(err);
-    }
+  async function fetchStoryIdsByType(storyType: StoryType) {
+    const { data } = await api.get<number[]>(`${storyType}stories.json`);
+    state[storyType] = data;
   }
-
-  const getTopStories = computed(() => {
-    return state.items.filter((item) => item.id in state.topStories);
-  });
 
   return {
     ...toRefs(state),
-    fetchTopStories,
-    fetchStory,
-    fetchStories,
-    getTopStories,
+    fetchItem,
+    fetchItems,
+    fetchStoryIdsByType,
   };
 });

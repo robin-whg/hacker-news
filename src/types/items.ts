@@ -1,3 +1,5 @@
+export type StoryType = "top" | "new" | "ask" | "show" | "job";
+
 export interface Story {
   by: string;
   descendants: number;
