@@ -19,20 +19,20 @@
       New
     </router-link>
     <router-link
-      :to="{ name: 'show' }"
-      class="flex flex-col items-center justify-center text-xs"
-      active-class="text-primary"
-    >
-      <i-heroicons-outline-eye class="h-7 w-7" />
-      Show
-    </router-link>
-    <router-link
       :to="{ name: 'ask' }"
       class="flex flex-col items-center justify-center text-xs"
       active-class="text-primary"
     >
       <i-heroicons-outline-chat class="h-7 w-7" />
       Ask
+    </router-link>
+    <router-link
+      :to="{ name: 'show' }"
+      class="flex flex-col items-center justify-center text-xs"
+      active-class="text-primary"
+    >
+      <i-heroicons-outline-eye class="h-7 w-7" />
+      Show
     </router-link>
     <router-link
       :to="{ name: 'jobs' }"

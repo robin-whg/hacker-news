@@ -4,8 +4,8 @@ import { isDark, toggleDark } from "~/composables";
 const links: [string, string][] = [
   ["index", "Top"],
   ["new", "New"],
-  ["show", "Show"],
   ["ask", "Ask"],
+  ["show", "Show"],
   ["jobs", "Jobs"],
 ];
 </script>
