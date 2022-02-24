@@ -3,7 +3,7 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      sans: ["Fira Sans", "sans-serif"],
+      sans: ["Ubuntu", "sans-serif"],
     },
     extend: {
       colors: {
