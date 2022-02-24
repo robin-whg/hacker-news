@@ -16,6 +16,7 @@ export const useItemStore = defineStore("items", () => {
 
   async function fetchItem(id: number) {
     try {
+      if (state.items.some((item) => item.id === id)) return;
       const { data } = await api.get<Story | Comment | Job | Poll | Pollopt>(
         `item/${id}.json`
       );
@@ -26,11 +27,7 @@ export const useItemStore = defineStore("items", () => {
   }
 
   async function fetchItems(ids: number[]) {
-    await Promise.all(
-      ids.map((id) => {
-        return fetchItem(id);
-      })
-    );
+    await Promise.all(ids.map((id) => fetchItem(id)));
   }
 
   async function fetchStoryIdsByType(storyType: StoryType) {
