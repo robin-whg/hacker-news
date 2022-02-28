@@ -16,7 +16,7 @@ const stories = itemStore.getStoriesByType(storyType.value);
 const currentPageIds = computed(() => {
   return itemStore[storyType.value].slice(
     stories.value.length,
-    stories.value.length + 10
+    stories.value.length + 15
   );
 });
 
@@ -32,7 +32,7 @@ useInfiniteScroll(
 </script>
 
 <template>
-  <div v-if="stories">
+  <ul v-if="stories">
     <story-list-item v-for="story in stories" :key="story.id" :story="story" />
-  </div>
+  </ul>
 </template>
