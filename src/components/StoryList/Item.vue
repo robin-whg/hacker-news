@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed, defineProps, toRefs } from "vue";
 import { formatDistanceToNowStrict } from "date-fns";
+import { useRouter } from "vue-router";
 import type { Job, Story } from "~/types";
 
 const props = defineProps<{ story: Story | Job }>();
@@ -11,18 +12,22 @@ const timeFromNow = computed(() => {
     addSuffix: true,
   });
 });
+
+const router = useRouter();
+const route = () => {
+  story.value.url
+    ? window.open(story.value.url, "_blank")
+    : router.push({ name: "item-id", params: { id: story.value.id } });
+};
 </script>
 
 <template>
-  <a
-    :href="() => (story.url ? story.url : '#')"
-    target="blank"
-    class="duration-50 flex flex-col border-b border-gray-300 px-2 py-4 transition ease-in-out hover:bg-gray-400/10 dark:border-gray-600 dark:hover:bg-gray-500/10"
+  <li
+    class="duration-50 flex cursor-pointer flex-col border-b border-gray-300 px-2 py-4 transition ease-in-out hover:bg-gray-400/10 dark:border-gray-600 dark:hover:bg-gray-500/10"
+    @click="route()"
   >
-    <p>
-      <span v-if="story.url" class="text-sm text-gray-500 dark:text-gray-400">
-        {{ story.url.replace(/(http(s)?:\/\/)|(\/.*){1}/g, "") }}
-      </span>
+    <p v-if="story.url" class="text-sm text-gray-500 dark:text-gray-400">
+      {{ story.url.replace(/(http(s)?:\/\/)|(\/.*){1}/g, "") }}
     </p>
     <p>{{ story.title }}</p>
     <div
@@ -44,5 +49,5 @@ const timeFromNow = computed(() => {
         </div>
       </div>
     </div>
-  </a>
+  </li>
 </template>
