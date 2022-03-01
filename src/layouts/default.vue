@@ -1,8 +1,8 @@
 <template>
   <the-navbar />
-  <div class="min-h-screen">
+  <base-suspense>
     <router-view />
-  </div>
+  </base-suspense>
   <the-footer />
   <the-tabbar />
 </template>
