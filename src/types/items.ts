@@ -13,9 +13,9 @@ export interface Story extends Item {
   kids: number[];
   score: number;
   title: string;
-  type: "story";
   url?: string;
   text?: string;
+  type: "story";
 }
 
 export interface Comment extends Item {
@@ -29,8 +29,8 @@ export interface Job extends Item {
   score: number;
   text: string;
   title: string;
+  url: string;
   type: "job";
-  url: string; // empty
 }
 
 export interface Poll extends Item {

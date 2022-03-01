@@ -1,5 +1,5 @@
 <template>
-  <div class="safe-pb flex items-center justify-center pt-8">
+  <div class="flex items-center justify-center pb-16 pt-8 sm:pb-8">
     <p class="flex items-center gap-1">
       Built with
       <a
@@ -12,9 +12,3 @@
     </p>
   </div>
 </template>
-
-<style lang="postcss" scoped>
-.safe-pb {
-  padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0.5rem));
-}
-</style>

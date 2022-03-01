@@ -18,9 +18,13 @@ declare module 'vue' {
     IHeroiconsOutlineNewspaper: typeof import('~icons/heroicons-outline/newspaper')['default']
     IHeroiconsOutlineStar: typeof import('~icons/heroicons-outline/star')['default']
     IHeroiconsOutlineSun: typeof import('~icons/heroicons-outline/sun')['default']
+    IHeroiconsSolidArrowRight: typeof import('~icons/heroicons-solid/arrow-right')['default']
+    IHeroiconsSolidExternalLink: typeof import('~icons/heroicons-solid/external-link')['default']
+    ItemView: typeof import('./components/ItemView/Index.vue')['default']
     NotFound: typeof import('./components/NotFound.vue')['default']
     StoryList: typeof import('./components/StoryList/Index.vue')['default']
     StoryListItem: typeof import('./components/StoryList/Item.vue')['default']
+    TheFooter: typeof import('./components/TheFooter.vue')['default']
     TheNavbar: typeof import('./components/TheNavbar.vue')['default']
     TheTabbar: typeof import('./components/TheTabbar.vue')['default']
   }
