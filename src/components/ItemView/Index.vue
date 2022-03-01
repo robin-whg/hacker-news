@@ -56,7 +56,7 @@ const timeFromNow = computed(() => {
     >
     <p
       v-if="item.text"
-      class="prose prose-gray mx-auto max-w-3xl dark:prose-invert"
+      class="prose prose-gray mx-auto max-w-3xl break-words dark:prose-invert"
       v-html="item.text"
     ></p>
     <div
