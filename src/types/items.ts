@@ -38,7 +38,7 @@ export interface Poll extends Item {
   kids: number[];
   parts: number[];
   score: number;
-  text: string; // empty
+  text: string;
   title: string;
   type: "poll";
 }
