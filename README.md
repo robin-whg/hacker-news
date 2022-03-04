@@ -1,3 +1,3 @@
-# Vue 3 + Typescript + Vite
+# Hacker News
 
-Template for Vue projects based on [Vitesse](https://github.com/antfu/vitesse).
+Made with Vue 3 and Typescript
