@@ -19,19 +19,21 @@ const route = () => {
     ? window.open(story.value.url, "_blank")
     : router.push({ name: "item-id", params: { id: story.value.id } });
 };
+
+const shortUrl = (url: string) => url.replace(/(http(s)?:\/\/)|(\/.*){1}/g, "");
 </script>
 
 <template>
   <li
-    class="duration-50 flex cursor-pointer flex-col border-b border-gray-300 px-2 py-4 transition ease-in-out hover:bg-gray-400/10 dark:border-gray-600 dark:hover:bg-gray-500/10"
+    class="duration-50 flex cursor-pointer flex-col border-b border-zinc-300 py-4 transition ease-in-out dark:border-zinc-600"
     @click="route()"
   >
-    <p v-if="story.url" class="text-sm text-gray-500 dark:text-gray-400">
-      {{ story.url.replace(/(http(s)?:\/\/)|(\/.*){1}/g, "") }}
+    <p v-if="story.url" class="text-sm text-zinc-500 dark:text-zinc-400">
+      {{ shortUrl(story.url) }}
     </p>
     <p>{{ story.title }}</p>
     <div
-      class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
+      class="flex items-center justify-between text-sm text-zinc-500 dark:text-zinc-400"
     >
       <div class="flex gap-4">
         <span

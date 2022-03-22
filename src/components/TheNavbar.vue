@@ -12,7 +12,7 @@ const links: [string, string][] = [
 
 <template>
   <nav
-    class="sticky top-0 flex w-full items-center justify-between border-b border-gray-300 bg-neutral-50/90 p-2 backdrop-blur dark:border-gray-600 dark:bg-neutral-900/90"
+    class="sticky top-0 flex w-full items-center justify-between border-b border-zinc-300 bg-white/75 p-2 backdrop-blur dark:border-zinc-600 dark:bg-black/75"
   >
     <div class="flex items-center gap-4">
       <img
@@ -21,7 +21,7 @@ const links: [string, string][] = [
         class="h-[2.375rem] w-[2.375rem] flex-none text-primary"
       />
       <div
-        class="hidden items-center gap-4 text-gray-600 dark:text-gray-300 sm:flex"
+        class="hidden items-center gap-4 text-zinc-600 dark:text-zinc-300 sm:flex"
       >
         <router-link
           v-for="link in links"

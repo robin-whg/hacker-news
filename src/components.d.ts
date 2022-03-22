@@ -20,6 +20,8 @@ declare module 'vue' {
     IHeroiconsOutlineSun: typeof import('~icons/heroicons-outline/sun')['default']
     IHeroiconsSolidArrowRight: typeof import('~icons/heroicons-solid/arrow-right')['default']
     IHeroiconsSolidExternalLink: typeof import('~icons/heroicons-solid/external-link')['default']
+    ItemList: typeof import('./components/ItemList/Index.vue')['default']
+    ItemListItem: typeof import('./components/ItemList/Item.vue')['default']
     ItemView: typeof import('./components/ItemView/Index.vue')['default']
     NotFound: typeof import('./components/NotFound.vue')['default']
     StoryList: typeof import('./components/StoryList/Index.vue')['default']

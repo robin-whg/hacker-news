@@ -25,7 +25,7 @@ const timeFromNow = computed(() => {
     >
     <p v-if="item.text" v-html="item.text"></p>
     <div
-      class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
+      class="flex items-center justify-between text-sm text-zinc-500 dark:text-zinc-400"
     >
       <div class="flex gap-4">
         <span
@@ -56,11 +56,11 @@ const timeFromNow = computed(() => {
     >
     <p
       v-if="item.text"
-      class="prose prose-gray mx-auto max-w-3xl break-words dark:prose-invert"
+      class="prose prose-zinc mx-auto max-w-3xl break-words dark:prose-invert"
       v-html="item.text"
     ></p>
     <div
-      class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400"
+      class="flex items-center justify-between text-sm text-zinc-500 dark:text-zinc-400"
     >
       <div class="flex gap-4">
         <span

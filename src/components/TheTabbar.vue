@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="the-tabbar fixed inset-x-0 bottom-0 grid w-full grid-cols-5 gap-2 border-t border-neutral-300 bg-neutral-50/90 text-gray-500 backdrop-blur dark:border-neutral-600 dark:bg-neutral-900/90 dark:text-gray-400 sm:hidden"
+    class="the-tabbar fixed inset-x-0 bottom-0 grid w-full grid-cols-5 gap-2 border-t border-zinc-300 bg-white/75 text-zinc-500 backdrop-blur dark:border-zinc-600 dark:bg-black/75 dark:text-zinc-400 sm:hidden"
   >
     <router-link
       :to="{ name: 'index' }"

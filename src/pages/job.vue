@@ -1,7 +1,7 @@
 <template>
   <base-container>
     <base-suspense>
-      <story-list story-type="job" />
+      <item-list story-type="job" />
     </base-suspense>
   </base-container>
 </template>

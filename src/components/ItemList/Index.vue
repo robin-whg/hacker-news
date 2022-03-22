@@ -33,6 +33,6 @@ useInfiniteScroll(
 
 <template>
   <ul v-if="stories">
-    <story-list-item v-for="story in stories" :key="story.id" :story="story" />
+    <item-list-item v-for="story in stories" :key="story.id" :story="story" />
   </ul>
 </template>

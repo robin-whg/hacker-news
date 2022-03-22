@@ -1,7 +1,7 @@
 <template>
   <base-container>
     <base-suspense>
-      <story-list story-type="ask" />
+      <item-list story-type="ask" />
     </base-suspense>
   </base-container>
 </template>

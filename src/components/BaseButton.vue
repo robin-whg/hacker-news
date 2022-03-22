@@ -20,11 +20,11 @@ const { loading, btnType } = toRefs(props);
     :class="[
       icon ? 'p-1.5' : 'py-2 px-4',
       {
-        'border-transparent bg-primary text-white hover:shadow-primary/50 dark:text-neutral-900':
+        'border-transparent bg-primary text-white hover:shadow-primary/50 dark:text-zinc-900':
           btnType === 'primary',
       },
       {
-        'border-gray-300  text-neutral-600 hover:bg-neutral-500/20 hover:shadow-neutral-500/10 dark:border-neutral-600 dark:text-neutral-300':
+        'border-zinc-300  text-zinc-600 hover:bg-zinc-500/20 hover:shadow-zinc-500/10 dark:border-zinc-600 dark:text-zinc-300':
           btnType === 'secondary',
       },
       {
