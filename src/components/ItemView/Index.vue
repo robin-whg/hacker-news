@@ -23,7 +23,11 @@ const timeFromNow = computed(() => {
       class="font-medium text-primary decoration-primary transition duration-100 ease-in-out hover:underline"
       >{{ item.url }}</a
     >
-    <p v-if="item.text" v-html="item.text"></p>
+    <p
+      v-if="item.text"
+      class="prose prose-zinc dark:prose-invert"
+      v-html="item.text"
+    ></p>
     <div
       class="flex items-center justify-between text-sm text-zinc-500 dark:text-zinc-400"
     >
@@ -36,10 +40,6 @@ const timeFromNow = computed(() => {
         <div class="flex items-center gap-1 p-1">
           <i-heroicons-outline-star class="h-4 w-4" />
           <span class="">{{ item.score }}</span>
-        </div>
-        <div class="flex items-center gap-1 p-1">
-          <i-heroicons-outline-annotation class="h-4 w-4" />
-          <span>{{ item.descendants }}</span>
         </div>
       </div>
     </div>
@@ -79,4 +79,13 @@ const timeFromNow = computed(() => {
   <div v-else-if="item.type === 'comment'">comment</div>
   <div v-else-if="item.type === 'poll'">poll</div>
   <div v-else-if="item.type === 'pollopt'">pollopt</div>
+
+  <hr class="my-4 border-zinc-300 dark:border-zinc-600" />
+
+  <div v-if="'descendants' in item">
+    <h2 class="text-lg">{{ item.descendants }} Comments</h2>
+    <base-suspense>
+      <item-view-comment-list v-if="'kids' in item" :ids="item.kids" />
+    </base-suspense>
+  </div>
 </template>

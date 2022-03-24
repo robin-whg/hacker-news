@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { computed, reactive, toRefs } from "vue";
 import { api } from "~/composables";
-import type { Job, Story, StoryType } from "~/types";
+import type { Comment, Job, Story, StoryType } from "~/types";
 
 export const useItemStore = defineStore("items", () => {
   const state = reactive({
@@ -16,9 +16,13 @@ export const useItemStore = defineStore("items", () => {
 
   async function fetchItem(id: number) {
     try {
-      if (state.items.some((item) => item.id === id)) return;
+      const item = state.items.find((item) => item.id === id);
+      if (item) return item;
+
       const { data } = await api.get<Story | Job>(`item/${id}.json`);
       state.items.push(data);
+
+      return data;
     } catch (err) {
       console.error(err);
     }
@@ -39,10 +43,27 @@ export const useItemStore = defineStore("items", () => {
     });
   }
 
+  async function getComment(id: number) {
+    try {
+      const { data } = await api.get<Comment>(`item/${id}.json`);
+
+      return data;
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  async function getComments(ids: number[]) {
+    const comments = await Promise.all(ids.map((x) => getComment(x)));
+    return comments.filter(Boolean) as Comment[];
+  }
+
   return {
     ...toRefs(state),
     fetchItem,
     fetchItems,
+    getComment,
+    getComments,
     fetchStoryIdsByType,
     getStoriesByType,
   };

@@ -12,14 +12,11 @@ const id = computed(() => {
 
 const itemStore = useItemStore();
 
-await itemStore.fetchItem(id.value);
-const item = itemStore.items.find((item) => {
-  return item.id === id.value;
-});
+const item = await itemStore.fetchItem(id.value);
 </script>
 
 <template>
-  <base-container class="py-4 px-2">
+  <base-container class="py-4">
     <template v-if="!item || item.dead || item.deleted">
       <not-found />
     </template>
